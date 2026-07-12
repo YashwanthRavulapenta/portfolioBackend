@@ -3,22 +3,40 @@ const { json } = require("express")
 const validationDetails = (req,res,next) => {
     const {username , email , subject , message} = req.body
     if(!username || !email || !subject || !message){
-        return res.send("Feilds are missing...")
+        return res.json({
+            status : false,
+            message : "Missing Feilds..."
+        })
     }
     if(!username){
-        return res.send("username missing")
+        return res.json({
+            status : false,
+            message : "Username missing..."
+        })
     }
     if(!email.endsWith("@gmail.com")){
-        return res.send("mail not appropriate")
+        return res.json({
+            status : false,
+            message : "Email ends with (@gmail.com) "
+        })
     }
     if(!email){
-        return res.send("email is missing")
+        return res.json({
+            status : false,
+            message : "Email is missing"
+        })
     }
     if(!subject){
-        return res.send("subject is mising")
+        return res.json({
+            status : false,
+            message : "Subject is mising"
+        })
     }
     if(!message){
-        return res.send("message is not provided")
+        return res.json({
+            status : false,
+            message : "Enter Message"
+        })
     }
     next()
 }
