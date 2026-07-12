@@ -1,3 +1,4 @@
+const { json } = require("express")
 
 const validationDetails = (req,res,next) => {
     const {username , email , subject , message} = req.body
@@ -19,7 +20,6 @@ const validationDetails = (req,res,next) => {
     if(!message){
         return res.send("message is not provided")
     }
-    console.log("yes user details okk")
     next()
 }
 
