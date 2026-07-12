@@ -5,37 +5,37 @@ const validationDetails = (req,res,next) => {
     if(!username || !email || !subject || !message){
         return res.json({
             status : false,
-            message : "Missing Feilds..."
+            message : "Please fill in all required fields."
         })
     }
     if(!username){
         return res.json({
             status : false,
-            message : "Username missing..."
+            message : "Name is required."
         })
     }
     if(!email.endsWith("@gmail.com")){
         return res.json({
             status : false,
-            message : "Email ends with (@gmail.com) "
+            message : "Please enter a valid Gmail address."
         })
     }
     if(!email){
         return res.json({
             status : false,
-            message : "Email is missing"
+            message : "Email is required."
         })
     }
     if(!subject){
         return res.json({
             status : false,
-            message : "Subject is mising"
+            message : "Subject is required."
         })
     }
     if(!message){
         return res.json({
             status : false,
-            message : "Enter Message"
+            message : "Message is required."
         })
     }
     next()
