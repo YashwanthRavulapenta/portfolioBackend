@@ -10,10 +10,10 @@ app.use(express.json())
 app.use(cors())
 
 
-console.log(process.env.MONGO_URI)
+// console.log(process.env.MONGO_URI)
 mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
-    console.log("mongoose atlas conned anukooo")
+    console.log("mongoose atlas connected anukoradhu")
 }).catch((error)=>{
     console.log("Error Name:", error.name);
     console.log("Error Message:", error.message);

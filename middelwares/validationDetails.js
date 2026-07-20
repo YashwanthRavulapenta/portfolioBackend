@@ -1,4 +1,3 @@
-const { json } = require("express")
 
 const validationDetails = (req,res,next) => {
     const {username , email , subject , message} = req.body
